@@ -1,0 +1,392 @@
+/* ملف الأنماط الرئيسي لنظام إدارة الموظفين */
+
+/* إعدادات عامة */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2c3e50;
+  --success-color: #2ecc71;
+  --danger-color: #e74c3c;
+  --warning-color: #f39c12;
+  --info-color: #1abc9c;
+  --light-color: #f8f9fa;
+  --dark-color: #343a40;
+}
+
+/*=============== BASE ===============*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+html {
+  height: 100%;
+  direction: rtl;
+}
+
+/* تحسين اتجاه العناصر التفاعلية */
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+}
+
+.btn-group > .btn:nth-child(n+3),
+.btn-group > :not(.btn-check) + .btn,
+.btn-group > .btn-group:not(:first-child) > .btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.btn-group > .btn:nth-child(n+3),
+.btn-group > :not(.btn-check) + .btn,
+.btn-group > .btn-group:not(:first-child) > .btn {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.btn-group > .btn:first-child {
+  margin-right: 0;
+  margin-left: -1px;
+}
+
+.btn-group > .btn:not(:first-child) {
+  margin-right: -1px;
+  margin-left: 0;
+}
+
+.input-group > .form-control:not(:last-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+  border-right: 0;
+  border-left: 1px solid #ced4da;
+}
+
+.input-group > .form-control:not(:first-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem;
+}
+
+.input-group-text {
+  border-right: 1px solid #ced4da;
+  border-left: 0;
+}
+
+.input-group .input-group-text:first-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+}
+
+.input-group .input-group-text:last-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem;
+  border-left: 1px solid #ced4da;
+  border-right: 0;
+}
+
+/* تحسين اتجاه القوائم المنسدلة */
+.dropdown-menu {
+  right: 0;
+  left: auto;
+  text-align: right;
+}
+
+.dropdown-menu-start {
+  right: auto;
+  left: 0;
+}
+
+.dropdown-menu-end {
+  right: 0;
+  left: auto;
+}
+
+/* تحسين اتجاه النوافذ المنبثقة */
+.modal-dialog {
+  text-align: right;
+}
+
+.modal-footer {
+  justify-content: flex-start;
+}
+
+/* تحسين اتجاه التنبيهات */
+.alert-dismissible .btn-close {
+  position: absolute;
+  top: 0;
+  left: 1.25rem;
+  z-index: 2;
+  padding: 1.25rem 1rem;
+}
+
+/* تحسين اتجاه التبويبات */
+.nav-tabs .nav-link {
+  border-radius: 0.375rem 0.375rem 0 0;
+  margin-left: 5px;
+  margin-right: 0;
+}
+
+.nav-tabs .nav-link:first-child {
+  margin-left: 0;
+}
+
+/* تحسين اتجاه الجداول */
+.table {
+  text-align: right;
+}
+
+.table th,
+.table td {
+  text-align: right;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+
+/* دعم اللغة العربية */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* الخلفية المتدرجة */
+.bg-gradient-primary {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
+  ) !important;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header .modal-title {
+  font-weight: bold;
+  flex-grow: 1;
+}
+/* تحسين شريط التنقل */
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/* تحسين البطاقات */
+.card {
+  border-radius: 10px;
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15) !important;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+/* تحسين الأزرار */
+.btn {
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+/* تحسين الجداول */
+.table {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table thead th {
+  border-bottom: 2px solid var(--primary-color);
+  background-color: rgba(52, 152, 219, 0.1);
+}
+
+/* تحسين الصور */
+.profile-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid var(--light-color);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* تحسين النماذج */
+.form-control,
+.form-select {
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  transition: all 0.2s;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+}
+
+/* تحسين التنبيهات */
+.alert {
+  border-radius: 8px;
+  border: none;
+}
+
+/* تحسين الصفحة الرئيسية */
+.dashboard-card {
+  transition: all 0.3s;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* تحسين صفحة تسجيل الدخول */
+.login-container {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-card {
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* تحسين الجانب */
+.sidebar {
+  background-color: var(--secondary-color);
+  min-height: 100vh;
+}
+
+.sidebar .nav-link {
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.2s;
+  border-radius: 8px;
+  margin: 5px 10px;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+/* تحسين الملاحظات */
+.note-positive {
+  border-right: 4px solid var(--success-color);
+}
+
+.note-negative {
+  border-right: 4px solid var(--danger-color);
+}
+
+.note-warning {
+  border-right: 4px solid var(--warning-color);
+}
+
+/* تحسين عرض الملفات */
+.file-list-item {
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.file-list-item:hover {
+  background-color: #f8f9fa;
+}
+.dropdown-item {
+  text-align: right;
+}
+
+/* تحسين عرض العهد */
+.asset-card {
+  transition: all 0.3s;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.asset-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* تحسين عرض التقارير */
+.chart-container {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+
+/* تحسين عرض التقويم */
+.calendar-container {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+/* تحسين عرض الحالات */
+.status-active {
+  color: var(--success-color);
+}
+
+.status-inactive {
+  color: var(--danger-color);
+}
+
+.status-pending {
+  color: var(--warning-color);
+}
+
+/* تحسين الصفحة على الشاشات الصغيرة */
+@media (max-width: 768px) {
+  .sidebar {
+    min-height: auto;
+  }
+
+  .card {
+    margin-bottom: 15px;
+  }
+
+  .table-responsive {
+    font-size: 0.9rem;
+  }
+}
+
+/* تحسين الطباعة */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .card {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+}

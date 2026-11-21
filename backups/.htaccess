@@ -1,0 +1,7 @@
+# منع الوصول المباشر إلى ملفات النسخ الاحتياطية
+Order Allow,Deny
+Deny from all
+
+# السماح بالوصول من الملكية المحلية فقط
+Order Allow,Deny
+Allow from localhost

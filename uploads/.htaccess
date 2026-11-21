@@ -1,0 +1,17 @@
+# منع الوصول المباشر إلى الملفات
+<FilesMatch "\.(php|phtml|php3|php4|php5|pl|py|cgi|sh|exe)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# السماح بالصور فقط
+<FilesMatch "\.(jpg|jpeg|png|gif|bmp|ico|svg)$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
+
+# منع سرد الملفات
+Options -Indexes
+
+# تعيين الترميز الصحيح
+AddDefaultCharset UTF-8
