@@ -1,41 +1,40 @@
-# نظام إدارة الموظفين
+Employee Management System
 
-## مقدمة
+Introduction
 
-نظام إدارة الموظفين هو تطبيق ويب متكامل مصمم لأتمتة وتسهيل إدارة شؤون الموظفين في الشركات. يوفر النظام واجهة سهلة الاستخدام لإدارة بيانات الموظفين، تتبع الحضور والانصراف، إدارة العهد، وغيرها من المهام الإدارية.
+The Employee Management System is a comprehensive web application designed to automate and simplify employee management and administrative operations within organizations. The system provides a user-friendly interface for managing employee information, tracking attendance, managing assigned assets, and handling other administrative tasks.
 
-## المميزات الرئيسية
+Key Features
 
-- إدارة بيانات الموظفين (إضافة، تعديل، حذف)
-- نظام حضور وانصراف متقدم
-- إدارة العهد والممتلكات الموكلة للموظفين
-- نظام إجازات مع موافقات إلكترونية
-- نظام ملاحظات للموظفين
-- تقارير متنوعة وإحصائيات
-- صلاحيات متعددة المستويات (مدير، موظف)
-- واجهة مستخدم عصرية ومتجاوبة
+- Employee information management (Add, Edit, Delete)
+- Advanced attendance tracking system
+- Employee assets and assigned property management
+- Leave management system with electronic approvals
+- Employee notes management
+- Various reports and statistics
+- Multi-level access control (Admin, Employee)
+- Modern and responsive user interface
 
-## المتطلبات التقنية
+Technical Requirements
 
-- PHP 7.4 أو أحدث
-- MySQL 5.7 أو أحدث
-- Apache أو Nginx كخادم ويب
-- متصفح حديث يدعم HTML5 و CSS3
+- PHP 7.4 or later
+- MySQL 5.7 or later
+- Apache or Nginx web server
+- A modern web browser with HTML5 and CSS3 support
 
-## التثبيت والإعداد
+Installation and Setup
 
-1. استنساخ المستودع أو نسخ الملفات إلى خادم الويب
-2. إنشاء قاعدة بيانات جديدة في MySQL
-3. استيراد ملف `database.sql` إلى قاعدة البيانات
-4. تعديل بيانات الاتصال بقاعدة البيانات في ملف `config.php`
-5. التأكد من أن مجلد `uploads` قابل للكتابة (صلاحية 755)
-6. تسجيل الدخول باستخدام:
-   - اسم المستخدم: admin
-   - كلمة المرور: password
+1. Clone the repository or copy the project files to your web server.
+2. Create a new database in MySQL.
+3. Import the "database.sql" file into the database.
+4. Update the database connection settings in "config.php".
+5. Make sure the "uploads" directory is writable (permission "755").
+6. Log in using the following default credentials:
+   - Username: "admin"
+   - Password: "password"
 
-## هيكل الملفات
+Project Structure
 
-```
 EmployeesManagment/
 ├── assets/
 │   └── css/
@@ -56,51 +55,52 @@ EmployeesManagment/
 ├── notes.php
 ├── reports.php
 └── README.md
-```
 
-## وصف الملفات الرئيسية
+Main Files Description
 
-- `config.php`: ملف الإعدادات الرئيسي والاتصال بقاعدة البيانات
-- `database.sql`: ملف SQL لإنشاء بنية قاعدة البيانات
-- `index.php`: الصفحة الرئيسية ولوحة التحكم
-- `login.php`: صفحة تسجيل الدخول
-- `logout.php`: معالجة تسجيل الخروج
-- `profile.php`: صفحة الملف الشخصي للمستخدم
-- `employees.php`: إدارة بيانات الموظفين
-- `departments.php`: إدارة الأقسام
-- `positions.php`: إدارة المناصب
-- `attendance.php`: إدارة الحضور والانصراف
-- `assets.php`: إدارة العهد
-- `leaves.php`: إدارة الإجازات
-- `notes.php`: إدارة الملاحظات
-- `reports.php`: عرض التقارير
+- "config.php": Main configuration file and database connection.
+- "database.sql": SQL file used to create the database structure.
+- "index.php": Main page and dashboard.
+- "login.php": Login page.
+- "logout.php": Handles user logout.
+- "profile.php": User profile page.
+- "employees.php": Employee information management.
+- "departments.php": Department management.
+- "positions.php": Position management.
+- "attendance.php": Attendance and check-in/check-out management.
+- "assets.php": Employee asset management.
+- "leaves.php": Leave management.
+- "notes.php": Employee notes management.
+- "reports.php": Displays system reports.
 
-## الصلاحيات
+User Permissions
 
-### المدير (Admin)
-- صلاحيات كاملة على النظام
-- إدارة جميع بيانات الموظفين
-- عرض وتحليل سجلات الحضور
-- إدارة العهد وتتبعها
-- كتابة ملاحظات على أي موظف
-- إنشاء تقارير متنوعة
+Administrator (Admin)
 
-### الموظف (Employee)
-- عرض بياناته الشخصية فقط
-- تسجيل الحضور والانصراف
-- عرض سجل الحضور الخاص به
-- عرض العهد المسندة إليه
-- كتابة ملاحظات خاصة به
-- طلب إجازات
+- Full access to the system
+- Manage all employee information
+- View and analyze attendance records
+- Manage and track assigned assets
+- Add notes to any employee
+- Generate various reports
 
-## الدعم الفني
+Employee
 
-لأي استفسارات أو مشاكل تقنية، يرجى التواصل مع فريق الدعم الفني.
+- View their own personal information
+- Record check-in and check-out
+- View their own attendance history
+- View assets assigned to them
+- Add personal notes
+- Submit leave requests
 
-## الترخيص
+Technical Support
 
-هذا المشروع مرخص تحت ترخيص MIT.
+For any inquiries or technical issues, please contact the technical support team.
 
-## التحديثات
+License
 
-سيتم إضافة تحديثات وميزات جديدة بشكل دوري بناءً على ملاحظات المستخدمين.
+This project is licensed under the MIT License.
+
+Updates
+
+New updates and features will be added regularly based on user feedback and requirements.
